@@ -9,7 +9,7 @@ RUN dotnet publish -c release -o /app --self-contained false --no-restore
 
 # app image
 FROM mcr.microsoft.com/dotnet/runtime:8.0
-LABEL user="se"
+LABEL user="main-1"
 WORKDIR /app
 COPY --from=build /app .
 ENTRYPOINT ["dotnet", "Worker.dll"]
